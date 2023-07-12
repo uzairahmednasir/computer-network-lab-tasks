@@ -1,0 +1,66 @@
+router1
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int gig0/0
+Router(config-if)#ip add 192.168.1.1 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#int gig0/1
+Router(config-if)#ip add 210.2.2.2 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#router eigrp 1
+Router(config-router)#network 192.168.1.0 0.0.0.255
+Router(config-router)#network 210.2.2.0 0.0.0.255
+Router(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 210.2.2.3 (GigabitEthernet0/1) is up: new adjacency
+
+
+
+router2
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int gig0/0
+Router(config-if)#ip add 192.168.2.1 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#int gig0/1
+Router(config-if)#ip add 210.2.2.3 255.255.255.0
+Router(config-if)#no sh
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#router eigrp 1
+Router(config-router)#network 192.168.2.0 0.0.0.255
+Router(config-router)#network 210.2.2.0 0.0.0.255
+Router(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 210.2.2.2 (GigabitEthernet0/1) is up: new adjacency
+
+
+
+#sh ip route
+#sh ip protocol
+#sh ip eigrp neighbor

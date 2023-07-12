@@ -1,0 +1,11 @@
+en
+conf t
+int gig0/0/0 (left side port of router for group1)
+ip add <ip address> <subnet mask>
+no sh
+exit
+exit
+sh ip int br
+int gig0/0/1 (right side port of router for group2)
+ip add <ip address> <subnet mask>
+no sh

@@ -1,0 +1,153 @@
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname uzair
+uzair(config)#int gig0/0/0
+uzair(config-if)#ip add 192.168.1.1 255.255.255.0
+uzair(config-if)#no sh
+
+uzair(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0/0, changed state to up
+
+uzair(config-if)#end
+uzair#
+%SYS-5-CONFIG_I: Configured from console by console
+
+uzair#en
+uzair#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+uzair(config)#enable secret 123
+uzair(config)#end
+uzair#
+%SYS-5-CONFIG_I: Configured from console by console
+
+uzair#exit
+
+
+
+
+
+
+
+
+
+uzair con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+uzair>en
+Password: 
+uzair#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+uzair(config)#line vty 0 6
+uzair(config-line)#password 1122
+uzair(config-line)#end
+uzair#
+%SYS-5-CONFIG_I: Configured from console by console
+
+uzair#exit
+
+
+
+
+
+
+
+
+
+uzair con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+uzair>
+
+
+
+============================================================
+============================================================
+
+Cisco Packet Tracer PC Command Line 1.0 (for end device)
+C:\>ping 192.168.1.1
+
+Pinging 192.168.1.1 with 32 bytes of data:
+
+Reply from 192.168.1.1: bytes=32 time=1ms TTL=255
+Reply from 192.168.1.1: bytes=32 time<1ms TTL=255
+Reply from 192.168.1.1: bytes=32 time<1ms TTL=255
+Reply from 192.168.1.1: bytes=32 time<1ms TTL=255
+
+Ping statistics for 192.168.1.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\>telnet 192.168.1.1
+Trying 192.168.1.1 ...Open
+
+
+User Access Verification
+
+Password: 
+uzair>en
+Password: 
+uzair#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+uzair(config)#hostname 357
+357(config)#
+
+============================================================
+============================================================
+
+en
+conf t
+hostname uzair
+int gig000
+ip add
+no sh
+end
+conf t
+enable secret 123
+end
+exit
+en (password prompt)
+conf t
+line vty 0 6
+password 1122
+end
+exit
